@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destination Wedding</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        /* Global Styles */
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+        }
+
+        h1,
+        h2,
+        h3 {
+            margin: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: url('https://www.fabhotels.com/blog/wp-content/uploads/2019/10/Best-Beach-Wedding-Destinations-in-India-600.jpg') center/cover no-repeat;
+            color: white;
+            text-align: center;
+            padding: 5rem 1rem;
+        }
+
+        .hero-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .cta-buttons .btn {
+            padding: 0.8rem 1.5rem;
+            margin: 0 0.5rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .primary-btn {
+            background: #e91e63;
+            color: white;
+        }
+
+        .secondary-btn {
+            background: white;
+            color: #e91e63;
+            border: 1px solid #e91e63;
+        }
+
+        /* Wedding Themes Section */
+        .wedding-themes {
+            text-align: center;
+            padding: 3rem 1rem;
+        }
+
+        .cards-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .card {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            width: 300px;
+        }
+
+        .card img {
+            width: 100%;
+        }
+
+        .card h3 {
+            margin: 1rem 0 0.5rem;
+        }
+
+        .card-btn {
+            display: inline-block;
+            margin: 1rem;
+            padding: 0.5rem 1rem;
+            background: #e91e63;
+            color: white;
+            border-radius: 5px;
+        }
+
+        /* Why Choose Us Section */
+        /* Why Choose Us Section Styling */
+        .why-choose-us {
+            background-color: #f9f9f9;
+            padding: 3rem 1rem;
+        }
+
+        .content-form-wrapper {
+            display: flex;
+            justify-content: space-between;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            /* For responsiveness */
+        }
+
+        .content {
+            flex: 1;
+            padding: 1rem;
+        }
+
+        .content h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .content ul {
+            list-style-type: disc;
+            padding-left: 1.5rem;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        /* Form Section Styling */
+        .form {
+            background-color: #fff;
+            padding: 2rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            /* White shadow effect */
+            border-radius: 8px;
+        }
+
+        .form h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: #333;
+        }
+
+        .form label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #555;
+        }
+
+        .form input,
+        .form select,
+        .form textarea {
+            width: 100%;
+            margin-bottom: 1rem;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .form textarea {
+            height: 100px;
+            resize: none;
+        }
+
+        .form button {
+            background-color: #ff6f61;
+            color: #fff;
+            font-size: 1rem;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            padding: 0.8rem 1.5rem;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .form button:hover {
+            background-color: #e8554c;
+        }
+
+        /* Two-Column Layout for Form */
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem 2rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .form-grid {
+                grid-template-columns: 1fr;
+                /* Single column on smaller screens */
+            }
+        }
+
+        /* wedding */
+
+        /* Section Styling */
+        .left-right-section {
+            padding: 3rem 1rem;
+            background-color: #f9f9f9;
+        }
+
+        .wedding {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .wedding .content {
+            flex: 1;
+        }
+
+        .wedding .content h2 {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .wedding .content p {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .wedding .image {
+            flex: 1;
+        }
+
+        .wedding .image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Reverse Layout */
+        .wedding.reverse {
+            flex-direction: row-reverse;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .wedding {
+                flex-direction: column;
+            }
+
+            .wedding.reverse {
+                flex-direction: column;
+            }
+
+            .wedding .content,
+            .wedding .image {
+                flex: none;
+                width: 100%;
+            }
+
+            .wedding .image img {
+                height: auto;
+            }
+        }
+
+
+        /* video section */
+
+        /* Video Section Styling */
+        .video-section {
+            background-color: #f9f9f9;
+            padding: 3rem 1rem;
+            text-align: center;
+        }
+
+        .video-section h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: #333;
+        }
+
+        .video-cards {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            /* Allows wrapping on smaller screens */
+        }
+
+        .video-card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 300px;
+            text-align: left;
+        }
+
+        .video-card video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .video-card p {
+            padding: 1rem;
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .video-cards {
+                flex-direction: column;
+                align-items: center;
+                gap: 1.5rem;
+            }
+
+            .video-card {
+                width: 100%;
+                max-width: 350px;
+            }
+        }
+
+
+
+        /* Responsive Styling */
+        @media (max-width: 768px) {
+            .content-form-wrapper {
+                flex-direction: column;
+            }
+
+            .form {
+                margin-top: 2rem;
+            }
+        }
+
+        /* heart */
+    /* General styling */
+
+
+.animation-section {
+  position: relative;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.line {
+  position: absolute;
+  top: 50%;
+  width: 0;
+  height: 2px;
+  background-color: #ff6b81;
+  transition: width 1s ease, left 1s ease, right 1s ease;
+}
+
+.left {
+  left: 0;
+}
+
+.right {
+  right: 0;
+}
+
+.heart {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  font-size: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: opacity 1s ease;
+}
+
+.groom, .bride {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.groom {
+  color: #5a3d5c;
+}
+
+.bride {
+  color: #f7b7d2;
+}
+
+@keyframes heartAnimation {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
+
+    </style>
+</head>
+
+<body>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>Your Dream Destination Wedding Awaits</h1>
+            <p>Celebrate your love story at a breathtaking destination tailored just for you.</p>
+            <div class="cta-buttons">
+                <a href="#" class="btn primary-btn">Explore Packages</a>
+                <a href="#" class="btn secondary-btn">Plan Your Wedding</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wedding Themes Section -->
+    <section class="wedding-themes">
+        <h2>Choose Your Perfect Wedding Theme</h2>
+        <div class="cards-container">
+            <div class="card">
+                <img src="https://images.wedmegood.com/wp-content/uploads/2018/12/Moving-Pictures1.jpg"
+                    alt="Beach Wedding">
+                <h3>Beach Wedding</h3>
+                <p>Say ‘I do’ with the ocean as your backdrop.</p>
+                <a href="#" class="card-btn">Explore This Theme</a>
+            </div>
+            <div class="card">
+                <img src="https://images.wedmegood.com/wp-content/uploads/2018/12/Moving-Pictures1.jpg"
+                    alt="Garden Wedding">
+                <h3>Garden Wedding</h3>
+                <p>Exchange vows amidst lush greenery.</p>
+                <a href="#" class="card-btn">Explore This Theme</a>
+            </div>
+            <div class="card">
+                <img src="https://images.wedmegood.com/wp-content/uploads/2018/12/Moving-Pictures1.jpg"
+                    alt="Royal Palace Wedding">
+                <h3>Royal Palace Wedding</h3>
+                <p>Feel like royalty on your big day.</p>
+                <a href="#" class="card-btn">Explore This Theme</a>
+            </div>
+            <div class="card">
+                <img src="https://images.wedmegood.com/wp-content/uploads/2018/12/Moving-Pictures1.jpg"
+                    alt="Mountain Retreat Wedding">
+                <h3>Mountain Retreat Wedding</h3>
+                <p>A serene wedding in the hills.</p>
+                <a href="#" class="card-btn">Explore This Theme</a>
+            </div>
+            <!-- <div class="card">
+                <img src="https://images.wedmegood.com/wp-content/uploads/2018/12/Moving-Pictures1.jpg"
+                    alt="Luxury Yacht Wedding">
+                <h3>Luxury Yacht Wedding</h3>
+                <p>Set sail for a celebration like no other.</p>
+                <a href="#" class="card-btn">Explore This Theme</a>
+            </div>
+            <div class="card">
+                <img src="https://images.wedmegood.com/wp-content/uploads/2018/12/Moving-Pictures1.jpg"
+                    alt="Cultural Fusion Wedding">
+                <h3>Cultural Fusion Wedding</h3>
+                <p>Blend traditions in a vibrant setting.</p>
+                <a href="#" class="card-btn">Explore This Theme</a>
+            </div> -->
+        </div>
+    </section>
+
+    <!-- card -->
+
+    <!-- Left-Right wedding Section -->
+    <section class="left-right-section">
+        <!-- Card 1 -->
+        <div class="wedding">
+            <div class="content">
+                <h2>SAY "I DO" IN ONE OF THE MOST EXTRAORDINARY PLACES ON EARTH: HAVELOCK ISLAND BEACH RESORT IN ANDAMANS!</h2>
+                <p>Imagine a wedding procession against a backdrop of clear skies, palm trees, cerulean water,    and beautiful sandy beaches! Well, it does sound like a fairytale. Sugary white sand    beaches, crystalline waters, and soothing sunshine – Andaman & Nicobar Islands is an    incredible destination for an effortlessly romantic wedding blessing.Say 'I do' at India's    one of the most spectacular destinations. A fairytale wedding gets accomplished here! The    warm hospitality and experience of decades at hosting weddings and other grand events make    us an excellent venue for India’s destination weddings. Offering an amalgamation of all    modern-day luxuries with unique royal splendors along with fine-dining options and premium    wedding arrangements, we ensure that a Destination Beach Wedding at Havelock Island remains    an unforgettable affair.
+                </p>
+            </div>
+            <div class="image">
+                <img src="https://eventsmanagementkerala.com/wp-content/uploads/2023/02/blog-2.27e5a04.webp" alt="Beach Wedding">
+            </div>
+        </div>
+
+        <!-- wedding 2 -->
+        <div class="wedding reverse">
+            <div class="content">
+                <h2>FOR A WEDDING EXPERIENCE AS UNIQUE AS YOU!
+                </h2>
+                <p>With professionals dedicated to getting every last detail right, we are committed to making your dream wedding come true. We also try to stay on top of the latest cuisine        trends and décor collaborating with top-notch vendors who bring all kinds of fabulous wedding ideas and venues to life. We are always open to trying something new and fun for an ideal Destination Wedding in Havelock Island. After all, our hearts are in this too.</p>
+            </div>
+            <div class="image">
+                <img src="https://www.travelandleisure.com/thmb/V4XfbHlCmoZn_z23R8BbsDYD0GY=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/TAL-wild-dunes-BEACHWEDHOTEL1223-c4aed295aa9d413bbad9cc911e8c65d5.jpg" alt="Palace Wedding">
+            </div>
+        </div>
+
+        <!-- wedding 3 -->
+        <div class="wedding">
+            <div class="content">
+                <h2>Charming Garden Wedding</h2>
+                <p>Exchange vows amidst lush greenery and vibrant blooms for an unforgettable garden wedding.</p>
+            </div>
+            <div class="image">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_i3fb9WVuGb6BBuLdFaI4loJzWrCA-shWdg&s" alt="Garden Wedding">
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Video Section -->
+    <section class="video-section">
+        <h2>Explore Our Wedding Moments</h2>
+        <div class="video-cards">
+            <!-- Video Card 1 -->
+            <div class="video-card">
+                <video controls>
+                    <source src="video1.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p>Beautiful beach wedding under the sunset.</p>
+            </div>
+
+            <!-- Video Card 2 -->
+            <div class="video-card">
+                <video controls>
+                    <source src="video2.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p>Elegant palace wedding with a royal touch.</p>
+            </div>
+
+            <!-- Video Card 3 -->
+            <div class="video-card">
+                <video controls>
+                    <source src="video3.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p>Charming garden wedding filled with flowers.</p>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Why Choose Us Section -->
+    <section class="why-choose-us">
+        <div class="content-form-wrapper">
+            <div class="content">
+                <h2>Why Choose Us for Your Special Day?</h2>
+                <ul>
+                    <li>Personalized wedding planning tailored to your vision.</li>
+                    <li>Handpicked venues to suit every style and budget.</li>
+                    <li>Expert coordination for a stress-free experience.</li>
+                    <li>Exclusive partnerships with world-class vendors.</li>
+                    <li>Unmatched attention to detail and guest satisfaction.</li>
+                    <li>Expert coordination for a stress-free experience.</li>
+                    <li>Exclusive partnerships with world-class vendors.</li>
+                    <li>Unmatched attention to detail and guest satisfaction.</li>
+                </ul>
+
+                <h3>We are dedicated to making your dream wedding come true.</h3>
+                <p>Express your individuality, honour your cultural heritage and observe the rituals of your faith. After all, it's your wedding, and only you know what clicks for you to make this exciting day everything you imagined it would be! Destination Wedding in Havelock Island services covers a range of options to choose from, providing the trendy to the traditional, the extravagant to the tastefully modest. So whether you walk down an aisle of rose petals or wish to take a conventional path, we'll be there to ensure that everything goes well along the way.</p>
+            </div>
+
+
+            <div class="form">
+                <h3>Enquiry Form</h3>
+                <form>
+                    <div class="form-grid">
+                        <!-- Left Column -->
+                        <div>
+                            <label for="name">Name</label>
+                            <input type="text" id="name" placeholder="Your Name" required>
+                        </div>
+
+                        <div>
+                            <label for="email">Email</label>
+                            <input type="email" id="email" placeholder="Your Email" required>
+                        </div>
+
+                        <div>
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" placeholder="Your Phone Number" required>
+                        </div>
+
+                        <div>
+                            <label for="date">Preferred Wedding Date</label>
+                            <input type="date" id="date" required>
+                        </div>
+
+                        <div>
+                            <label for="guests">Estimated Guest Count</label>
+                            <input type="number" id="guests" placeholder="Number of Guests" required>
+                        </div>
+
+                        <div>
+                            <label for="type">Wedding Type</label>
+                            <select id="type" required>
+                                <option>Beach</option>
+                                <option>Palace</option>
+                                <option>Garden</option>
+                                <option>Yacht</option>
+                                <option>Cultural</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!-- Full Width Textarea -->
+                    <div>
+                        <label for="message">Message</label>
+                        <textarea id="message" placeholder="Your Message"></textarea>
+                    </div>
+                    <!-- Submit Button -->
+                    <button type="submit" class="btn primary-btn">Start Planning Your Wedding</button>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+   
+    <section id="animation-section" class="animation-section">
+        <div class="line left"></div>
+        <div class="line right"></div>
+        <div id="heart" class="heart">
+          <span class="groom">Groom</span>
+          <span class="bride">Bride</span>
+        </div>
+      </section>
+
+
+</body>
+
+
+<script>
+// Detect scroll and trigger the animation
+window.addEventListener('scroll', () => {
+  const section = document.getElementById('animation-section');
+  const leftLine = document.querySelector('.line.left');
+  const rightLine = document.querySelector('.line.right');
+  const heart = document.getElementById('heart');
+
+  // Get the position of the animation section relative to the viewport
+  const sectionTop = section.getBoundingClientRect().top;
+
+  // Trigger the animation when the section is in the viewport
+  if (sectionTop < window.innerHeight / 1.5) {
+    // Expand the lines to the center
+    leftLine.style.width = '50%';
+    rightLine.style.width = '50%';
+    leftLine.style.left = '25%';
+    rightLine.style.right = '25%';
+
+    // Heart appears after lines meet
+    setTimeout(() => {
+      heart.style.width = '100px';  // Set the width of the heart
+      heart.style.height = '100px'; // Set the height of the heart
+      heart.style.animation = 'heartAnimation 1s ease forwards'; // Heart animation
+    }, 1000); // Delay to show the heart after lines meet
+  }
+
+  // Separate the lines when scrolling further
+  if (sectionTop > window.innerHeight / 2) {
+    leftLine.style.width = '0';
+    rightLine.style.width = '0';
+    leftLine.style.left = '0';
+    rightLine.style.right = '0';
+    heart.style.width = '0';  // Hide the heart when lines separate
+    heart.style.height = '0';
+    heart.style.opacity = '0'; // Hide heart when lines separate
+  }
+});
+
+
+</script>
+
+</html>
